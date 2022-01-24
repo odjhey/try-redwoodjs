@@ -14,9 +14,19 @@ const formatDatetime = (value) => {
   }
 }
 
+const formatFloat = (value) => {
+  if (value) {
+    return parseFloat(value)
+  }
+  return parseFloat('0.00')
+}
+
 const PriceForm = (props) => {
   const onSubmit = (data) => {
-    props.onSave(data, props?.price?.id)
+    props.onSave(
+      { ...data, amount: formatFloat(data.amount) },
+      props?.price?.id
+    )
   }
 
   return (
@@ -87,6 +97,7 @@ const PriceForm = (props) => {
         <NumberField
           name="unitId"
           defaultValue={props.price?.unitId}
+          disabled={props.price?.unitId}
           className="rw-input"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}

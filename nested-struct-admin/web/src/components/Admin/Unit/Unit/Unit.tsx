@@ -79,6 +79,12 @@ const Unit = ({ unit }) => {
         >
           Edit
         </Link>
+        <Link
+          to={routes.adminNewPrice({ unitId: unit.id })}
+          className="rw-button rw-button-blue"
+        >
+          Add Price
+        </Link>
         <button
           type="button"
           className="rw-button rw-button-red"

@@ -11,7 +11,8 @@ const CREATE_PRICE_MUTATION = gql`
   }
 `
 
-const NewPrice = () => {
+const NewPrice = (props) => {
+  const { price } = props
   const [createPrice, { loading, error }] = useMutation(CREATE_PRICE_MUTATION, {
     onCompleted: () => {
       toast.success('Price created')
@@ -33,7 +34,12 @@ const NewPrice = () => {
         <h2 className="rw-heading rw-heading-secondary">New Price</h2>
       </header>
       <div className="rw-segment-main">
-        <PriceForm onSave={onSave} loading={loading} error={error} />
+        <PriceForm
+          onSave={onSave}
+          loading={loading}
+          error={error}
+          price={price}
+        />
       </div>
     </div>
   )
