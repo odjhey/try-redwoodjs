@@ -23,7 +23,7 @@ const NewPrice = () => {
   })
 
   const onSave = (input) => {
-    const castInput = Object.assign(input, { unitId: parseInt(input.unitId), })
+    const castInput = Object.assign(input, { unitId: parseInt(input.unitId) })
     createPrice({ variables: { input: castInput } })
   }
 
