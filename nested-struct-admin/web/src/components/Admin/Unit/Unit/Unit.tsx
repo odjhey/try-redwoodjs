@@ -1,6 +1,7 @@
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 import { Link, routes, navigate } from '@redwoodjs/router'
+import PricesList from '../../Price/Prices/Prices'
 
 const DELETE_UNIT_MUTATION = gql`
   mutation DeleteUnitMutation($id: Int!) {
@@ -71,6 +72,14 @@ const Unit = ({ unit }) => {
             </tr>
           </tbody>
         </table>
+        <div>
+          <div className="rw-segment-header">
+            <h3 className="rw-heading rw-heading-secondary">Prices</h3>
+          </div>
+          <div className="rw-segment-main">
+            <PricesList prices={unit.prices}></PricesList>
+          </div>
+        </div>
       </div>
       <nav className="rw-button-group">
         <Link

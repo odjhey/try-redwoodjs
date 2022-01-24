@@ -97,7 +97,7 @@ const PriceForm = (props) => {
         <NumberField
           name="unitId"
           defaultValue={props.price?.unitId}
-          disabled={props.price?.unitId}
+          readOnly={props.price?.unitId}
           className="rw-input"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}

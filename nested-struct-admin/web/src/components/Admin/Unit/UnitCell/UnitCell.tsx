@@ -9,6 +9,12 @@ export const QUERY = gql`
       id
       name
       desc
+      prices {
+        id
+        name
+        amount
+        currency
+      }
     }
   }
 `
