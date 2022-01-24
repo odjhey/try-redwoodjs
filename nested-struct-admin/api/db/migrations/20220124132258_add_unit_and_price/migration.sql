@@ -1,0 +1,16 @@
+-- CreateTable
+CREATE TABLE "Unit" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "name" TEXT NOT NULL,
+    "desc" TEXT NOT NULL
+);
+
+-- CreateTable
+CREATE TABLE "Price" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "name" TEXT NOT NULL,
+    "amount" DECIMAL NOT NULL,
+    "currency" TEXT NOT NULL,
+    "unitId" INTEGER NOT NULL,
+    CONSTRAINT "Price_unitId_fkey" FOREIGN KEY ("unitId") REFERENCES "Unit" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
