@@ -14,6 +14,7 @@ import UnitsLayout from 'src/layouts/Admin/UnitsLayout'
 const Routes = () => {
   return (
     <Router>
+      <Route path="/portal/unit" page={PortalUnitUnitPage} name="unit" />
       <Set wrap={PricesLayout}>
         <Route path="/admin/prices/new" page={AdminPriceNewPricePage} name="adminNewPrice" />
         <Route path="/admin/prices/{id:Int}/edit" page={AdminPriceEditPricePage} name="adminEditPrice" />
