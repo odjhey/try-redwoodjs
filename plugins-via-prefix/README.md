@@ -10,6 +10,7 @@
 - [ ] create a dev guide/wf, [something like this](https://github.com/echobind/bisonapp/blob/canary/docs/devWorkflow.md)
 - [x] add portal view
 - [ ] rename PortalUnits to PortalUnitList and PortalUnitListItem accordingly
+- [ ] add deletedAt flag to models
 
 ## Plugin Centric Dev
 
