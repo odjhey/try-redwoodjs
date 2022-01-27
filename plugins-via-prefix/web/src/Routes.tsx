@@ -8,6 +8,7 @@
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
 import { Set, Router, Route } from '@redwoodjs/router'
+import ImagesLayout from 'src/layouts/Admin/ImagesLayout'
 import CoreUnitExtGeneralInfosLayout from 'src/layouts/Admin/CoreUnitExtGeneralInfosLayout'
 import CoreUnitsLayout from 'src/layouts/Admin/CoreUnitsLayout'
 import CoreProjectsLayout from 'src/layouts/Admin/CoreProjectsLayout'
@@ -55,6 +56,14 @@ const Routes = () => {
           <Route path="/admin/core-unit-ext-general-infos/{id:Int}/edit" page={AdminCoreUnitExtGeneralInfoEditCoreUnitExtGeneralInfoPage} name="adminEditCoreUnitExtGeneralInfo" />
           <Route path="/admin/core-unit-ext-general-infos/{id:Int}" page={AdminCoreUnitExtGeneralInfoCoreUnitExtGeneralInfoPage} name="adminCoreUnitExtGeneralInfo" />
         </Set>
+
+        <Set wrap={ImagesLayout}>
+          <Route path="/admin/images/new" page={AdminImageNewImagePage} name="adminNewImage" />
+          <Route path="/admin/images/{id:Int}/edit" page={AdminImageEditImagePage} name="adminEditImage" />
+          <Route path="/admin/images/{id:Int}" page={AdminImageImagePage} name="adminImage" />
+          <Route path="/admin/images" page={AdminImageImagesPage} name="adminImages" />
+        </Set>
+
         <Route notfound page={NotFoundPage} />
       </Set>
     </Router>
