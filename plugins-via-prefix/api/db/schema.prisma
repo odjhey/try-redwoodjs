@@ -14,37 +14,37 @@ model CoreOrganization {
   name  String
   updatedAt DateTime @updatedAt
 
-//  developments CoreDevelopment[]
+  developments CoreDevelopment[]
 }
 
-// model CoreDevelopment {
-//   id    Int     @id @default(autoincrement())
-//   cuid  String  @unique @default(cuid())
-//   name  String
-//   updatedAt DateTime @updatedAt
-//   organization CoreOrganization @relation(fields: [organizationId], references: [id])
-//   organizationId Int
-//
-//   projects CoreProject[]
-// }
-//
-// model CoreProject {
-//   id    Int     @id @default(autoincrement())
-//   cuid  String  @unique @default(cuid())
-//   name  String
-//   updatedAt DateTime @updatedAt
-//   development CoreDevelopment @relation(fields: [developmentId], references: [id])
-//   developmentId Int
-//
-//   units CoreUnit[]
-// }
-//
-// model CoreUnit {
-//   id    Int     @id @default(autoincrement())
-//   cuid  String  @unique @default(cuid())
-//   name  String
-//   updatedAt DateTime @updatedAt
-//   project CoreProject @relation(fields: [projectId], references: [id])
-//   projectId Int
-// }
-//
+model CoreDevelopment {
+  id    Int     @id @default(autoincrement())
+  cuid  String  @unique @default(cuid())
+  name  String
+  updatedAt DateTime @updatedAt
+  organization CoreOrganization @relation(fields: [organizationId], references: [id])
+  organizationId Int
+
+  projects CoreProject[]
+}
+
+model CoreProject {
+  id    Int     @id @default(autoincrement())
+  cuid  String  @unique @default(cuid())
+  name  String
+  updatedAt DateTime @updatedAt
+  development CoreDevelopment @relation(fields: [developmentId], references: [id])
+  developmentId Int
+
+  units CoreUnit[]
+}
+
+model CoreUnit {
+  id    Int     @id @default(autoincrement())
+  cuid  String  @unique @default(cuid())
+  name  String
+  updatedAt DateTime @updatedAt
+  project CoreProject @relation(fields: [projectId], references: [id])
+  projectId Int
+}
+
