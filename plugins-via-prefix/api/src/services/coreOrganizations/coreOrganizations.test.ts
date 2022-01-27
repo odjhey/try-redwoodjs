@@ -32,11 +32,11 @@ describe('coreOrganizations', () => {
 
   scenario('creates a coreOrganization', async () => {
     const result = await createCoreOrganization({
-      input: { name: 'String', updatedAt: '2022-01-27T03:11:33Z' },
+      input: { name: 'String', updatedAt: '2022-01-27T03:16:03Z' },
     })
 
     expect(result.name).toEqual('String')
-    expect(result.updatedAt).toEqual('2022-01-27T03:11:33Z')
+    expect(result.updatedAt).toEqual('2022-01-27T03:16:03Z')
   })
 
   scenario('updates a coreOrganization', async (scenario: StandardScenario) => {

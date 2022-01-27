@@ -4,6 +4,7 @@ export const schema = gql`
     cuid: String!
     name: String!
     updatedAt: DateTime!
+    developments: [CoreDevelopment]!
   }
 
   type Query {
