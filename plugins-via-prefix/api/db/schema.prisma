@@ -67,3 +67,9 @@ model CoreUnitExtGeneralInfo {
   model String
   description String
 }
+
+model Image {
+  id    Int    @id @default(autoincrement())
+  title String
+  url   String
+}

@@ -12,6 +12,7 @@
 - [x] add ~~portal~~ home/non-admin view
 - [ ] rename PortalUnits to PortalUnitList and PortalUnitListItem accordingly
 - [ ] add deletedAt flag to models
+- [x] add fileupload (we'll use filestack.com for now) - see if we have to roll our own solution in the future
 - [ ] find a good way to assign assets/images to db-resources (im thinking of an upload and tag approach)
 - [ ] start figuring out how to do db searches (index maybe? or a search term field?)
 - [ ] add pagination
@@ -19,7 +20,6 @@
 - [ ] (low prio) override styles of scaffold, see `y rw setup generate scaffold`
 - [ ] (low prio) setup husky, lint-staged, trunkio
 - [ ] (low prio) setup sentry
-
 
 ## Plugin Centric Dev
 

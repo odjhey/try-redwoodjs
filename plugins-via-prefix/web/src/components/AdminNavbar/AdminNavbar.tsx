@@ -21,6 +21,9 @@ const AdminNavbar = (props: Omit<NavbarProps, 'children'>) => {
           <List.Item>
             <Link to={routes.adminCoreUnits()}>Units</Link>
           </List.Item>
+          <List.Item>
+            <Link to={routes.adminImages()}>Images</Link>
+          </List.Item>
         </List>
       </Navbar.Section>
       <Navbar.Section>
