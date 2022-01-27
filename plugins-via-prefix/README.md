@@ -5,7 +5,7 @@
 - [ ] add model "views" (ala maintenance-status) i.e. general-view, sizes-view
 - [ ] add auth
 - [ ] secure some routes depends on the authorization
-- [ ] create dev guide/wf, [something like this](https://github.com/echobind/bisonapp/blob/canary/docs/devWorkflow.md)
+- [ ] create a dev guide/wf, [something like this](https://github.com/echobind/bisonapp/blob/canary/docs/devWorkflow.md)
 
 ## Getting Started
 
