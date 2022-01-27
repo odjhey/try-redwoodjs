@@ -1,4 +1,4 @@
-import { Grid, Group, Switch, Text } from '@mantine/core'
+import { Group, Switch, Text } from '@mantine/core'
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 import PortalUnitsCell from 'src/components/PortalUnitsCell'
