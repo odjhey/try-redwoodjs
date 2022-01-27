@@ -1,9 +1,11 @@
-# Redwood
+# Redwood Tests
 
-> **NOTICE:** RedwoodJS is very close to a stable version 1.0. In the last two years,
-> the project has matured significantly and is already used in production by a number
-> of startups. We intend to have a 1.0 release candidate before the end of 2021 and
-> to release a truly production-ready 1.0 in early 2022.
+## Todo
+
+- [ ] add model "views" (ala maintenance-status) i.e. general-view, sizes-view
+- [ ] add auth
+- [ ] secure some routes depends on the authorization
+- [ ] create dev guide/wf, [something like this](https://github.com/echobind/bisonapp/blob/canary/docs/devWorkflow.md)
 
 ## Getting Started
 
