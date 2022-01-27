@@ -4,11 +4,13 @@
 
 - [ ] provision a plugin space in admin pages
 - [ ] add model "views" (ala maintenance-status) i.e. general-view, sizes-view
-- [ ] add auth
+- [x] add authentication
+- [ ] add authorization (RBAC)
 - [ ] secure some routes depends on the authorization
 - [ ] create a dev guide/wf, [something like this](https://github.com/echobind/bisonapp/blob/canary/docs/devWorkflow.md)
 
 ## Plugin Centric Dev
+
 features are either a plugin, or part of core.
 
 ## Getting Started

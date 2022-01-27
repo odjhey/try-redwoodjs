@@ -1,5 +1,10 @@
-api/dist
 .redwood
+api/dist
+web/dist
+
 web/public/mockServiceWorker.js
+
+api/types/graphql.d.ts
+web/types/graphql.d.ts
 
 

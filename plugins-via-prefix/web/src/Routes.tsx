@@ -17,6 +17,10 @@ import AdminLayout from 'src/layouts/AdminLayout/AdminLayout'
 const Routes = () => {
   return (
     <Router>
+      <Route path="/login" page={LoginPage} name="login" />
+      <Route path="/signup" page={SignupPage} name="signup" />
+      <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
+      <Route path="/reset-password" page={ResetPasswordPage} name="resetPassword" />
       <Route path="/" page={HomePage} name="home" />
       <Set wrap={AdminLayout}>
         <Route path="/admin" page={AdminPage} name="admin" />
