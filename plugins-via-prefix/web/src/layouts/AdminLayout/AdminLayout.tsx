@@ -1,4 +1,6 @@
-import { AppShell, Navbar, Header } from '@mantine/core'
+import { AppShell } from '@mantine/core'
+import AdminHeader from 'src/components/AdminHeader/AdminHeader'
+import AdminNavbar from 'src/components/AdminNavbar/AdminNavbar'
 
 type AdminLayoutProps = {
   children?: React.ReactNode
@@ -8,24 +10,8 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
   return (
     <AppShell
       padding="md"
-      navbar={
-        <Navbar height={600} padding="xs" width={{ base: 300 }}>
-          <Navbar.Section>
-            <h1>Brand</h1>
-          </Navbar.Section>
-          <Navbar.Section grow mt="lg">
-            <h2>mainlinks</h2>
-          </Navbar.Section>
-          <Navbar.Section>
-            <h3>footer</h3>
-          </Navbar.Section>
-        </Navbar>
-      }
-      header={
-        <Header height={60} padding="xs">
-          {/* Header content */}
-        </Header>
-      }
+      navbar={<AdminNavbar width={{ base: 300 }} height={500} padding="xs" />}
+      header={<AdminHeader height={70} padding="xs" />}
       styles={(theme) => ({
         main: {
           backgroundColor:

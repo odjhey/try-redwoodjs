@@ -1,4 +1,5 @@
 api/dist
 .redwood
+web/public/mockServiceWorker.js
 
 
