@@ -2,15 +2,24 @@
 
 ## Todo
 
-- [ ] provision a plugin space in admin pages
-- [ ] add model "views" (ala maintenance-status) i.e. general-view, sizes-view
+- [ ] provision a plugin space in admin pages (add a section/tab for the detials)
+- [x] add model "views" (ala maintenance-status) i.e. general-view, sizes-view (done one2one)
+- [ ] add model "views" - list - one2many - i.e. prices
 - [x] add authentication
 - [ ] add authorization (RBAC)
 - [ ] secure some routes depends on the authorization
 - [ ] create a dev guide/wf, [something like this](https://github.com/echobind/bisonapp/blob/canary/docs/devWorkflow.md)
-- [x] add portal view
+- [x] add ~~portal~~ home/non-admin view
 - [ ] rename PortalUnits to PortalUnitList and PortalUnitListItem accordingly
 - [ ] add deletedAt flag to models
+- [ ] find a good way to assign assets/images to db-resources (im thinking of an upload and tag approach)
+- [ ] start figuring out how to do db searches (index maybe? or a search term field?)
+- [ ] add pagination
+
+- [ ] (low prio) override styles of scaffold, see `y rw setup generate scaffold`
+- [ ] (low prio) setup husky, lint-staged, trunkio
+- [ ] (low prio) setup sentry
+
 
 ## Plugin Centric Dev
 
