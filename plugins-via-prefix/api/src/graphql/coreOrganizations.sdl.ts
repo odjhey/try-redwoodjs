@@ -12,12 +12,10 @@ export const schema = gql`
   }
 
   input CreateCoreOrganizationInput {
-    cuid: String!
     name: String!
   }
 
   input UpdateCoreOrganizationInput {
-    cuid: String
     name: String
   }
 

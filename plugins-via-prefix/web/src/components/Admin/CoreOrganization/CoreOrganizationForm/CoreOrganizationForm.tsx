@@ -29,22 +29,6 @@ const CoreOrganizationForm = (props) => {
         />
 
         <Label
-          name="cuid"
-          className="rw-label"
-          errorClassName="rw-label rw-label-error"
-        >
-          Cuid
-        </Label>
-        <TextField
-          name="cuid"
-          defaultValue={props.coreOrganization?.cuid}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
-        />
-        <FieldError name="cuid" className="rw-field-error" />
-
-        <Label
           name="name"
           className="rw-label"
           errorClassName="rw-label rw-label-error"
