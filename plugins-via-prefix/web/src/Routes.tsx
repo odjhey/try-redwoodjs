@@ -8,6 +8,7 @@
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
 import { Set, Router, Route } from '@redwoodjs/router'
+import CoreUnitExtGeneralInfosLayout from 'src/layouts/Admin/CoreUnitExtGeneralInfosLayout'
 import CoreUnitsLayout from 'src/layouts/Admin/CoreUnitsLayout'
 import CoreProjectsLayout from 'src/layouts/Admin/CoreProjectsLayout'
 import CoreDevelopmentsLayout from 'src/layouts/Admin/CoreDevelopmentsLayout'
@@ -47,6 +48,12 @@ const Routes = () => {
           <Route path="/admin/core-organizations/{id:Int}/edit" page={AdminCoreOrganizationEditCoreOrganizationPage} name="adminEditCoreOrganization" />
           <Route path="/admin/core-organizations/{id:Int}" page={AdminCoreOrganizationCoreOrganizationPage} name="adminCoreOrganization" />
           <Route path="/admin/core-organizations" page={AdminCoreOrganizationCoreOrganizationsPage} name="adminCoreOrganizations" />
+        </Set>
+
+        <Set wrap={CoreUnitExtGeneralInfosLayout}>
+          <Route path="/admin/core-unit-ext-general-infos/new" page={AdminCoreUnitExtGeneralInfoNewCoreUnitExtGeneralInfoPage} name="adminNewCoreUnitExtGeneralInfo" />
+          <Route path="/admin/core-unit-ext-general-infos/{id:Int}/edit" page={AdminCoreUnitExtGeneralInfoEditCoreUnitExtGeneralInfoPage} name="adminEditCoreUnitExtGeneralInfo" />
+          <Route path="/admin/core-unit-ext-general-infos/{id:Int}" page={AdminCoreUnitExtGeneralInfoCoreUnitExtGeneralInfoPage} name="adminCoreUnitExtGeneralInfo" />
         </Set>
         <Route notfound page={NotFoundPage} />
       </Set>

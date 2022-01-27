@@ -55,5 +55,15 @@ model CoreUnit {
   updatedAt DateTime @updatedAt
   project CoreProject @relation(fields: [projectId], references: [id])
   projectId Int
+
+  generalInfo CoreUnitExtGeneralInfo?
 }
 
+model CoreUnitExtGeneralInfo {
+  id    Int     @id @default(autoincrement())
+  updatedAt DateTime @updatedAt
+  unit CoreUnit @relation(fields: [unitId], references: [id])
+  unitId Int
+  model String
+  description String
+}
