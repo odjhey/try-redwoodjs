@@ -56,7 +56,15 @@ model CoreUnit {
   project CoreProject @relation(fields: [projectId], references: [id])
   projectId Int
 
+  // what are the benefits of moving this to own model?
+  // i.e. model CoreUnitViews {
+  //        unit
+  //        generalInfo CoreUnitExtGeneralInfo?
+  //        attachments
+  //      }
   generalInfo CoreUnitExtGeneralInfo?
+
+  attachments CoreAttachment[]
 }
 
 model CoreUnitExtGeneralInfo {
@@ -72,4 +80,27 @@ model Image {
   id    Int    @id @default(autoincrement())
   title String
   url   String
+
+  attachments ImagesOnCoreAttachment[]
+}
+
+model CoreAttachment {
+  id    Int     @id @default(autoincrement())
+  updatedAt DateTime @updatedAt
+  targetModel String
+
+  images ImagesOnCoreAttachment[]
+
+  unit CoreUnit @relation(fields: [unitId], references: [id])
+  unitId Int
+
+  // add more possible targets here
+}
+
+model ImagesOnCoreAttachment {
+  id    Int    @id @default(autoincrement())
+  attachmentId Int
+  attachment CoreAttachment @relation(fields: [attachmentId], references: [id])
+  imageId Int
+  image Image @relation(fields: [imageId], references: [id])
 }
