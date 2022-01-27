@@ -8,6 +8,7 @@
 - [ ] add authorization (RBAC)
 - [ ] secure some routes depends on the authorization
 - [ ] create a dev guide/wf, [something like this](https://github.com/echobind/bisonapp/blob/canary/docs/devWorkflow.md)
+- [x] add portal view
 
 ## Plugin Centric Dev
 
