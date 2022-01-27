@@ -15,7 +15,7 @@ const PortalUnit = ({ portalUnit }) => {
     theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.gray[7]
 
   return (
-    <div style={{ width: 340 }}>
+    <div style={{ width: 280 }}>
       <Card shadow="sm" padding="lg">
         <Card.Section></Card.Section>
 

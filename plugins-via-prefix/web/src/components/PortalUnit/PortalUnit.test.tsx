@@ -5,7 +5,7 @@ import PortalUnit from './PortalUnit'
 describe('PortalUnit', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<PortalUnit />)
+      render(<PortalUnit portalUnit={[]} />)
     }).not.toThrow()
   })
 })

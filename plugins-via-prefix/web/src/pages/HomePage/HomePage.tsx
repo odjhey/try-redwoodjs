@@ -1,8 +1,9 @@
-import { Group, Switch, Text } from '@mantine/core'
+import { Group, Paper, Switch, Text } from '@mantine/core'
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 import PortalUnitsCell from 'src/components/PortalUnitsCell'
 import { useThemeSwitcher } from 'src/hooks/useThemeSwitcher'
+import { SunIcon, MoonIcon } from '@modulz/radix-icons'
 
 const HomePage = () => {
   return (
@@ -21,13 +22,16 @@ const HomePage = () => {
 const ThemeSwitch = () => {
   const { theme, toggleLightTheme } = useThemeSwitcher()
   return (
-    <Group>
-      <Switch
-        checked={theme === 'light'}
-        onChange={(event) => toggleLightTheme(event.currentTarget.checked)}
-      />
-      <Text>{theme}</Text>
-    </Group>
+    <Paper>
+      <Group>
+        <Switch
+          checked={theme === 'light'}
+          onChange={(event) => toggleLightTheme(event.currentTarget.checked)}
+        />
+        {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+        <Text>{theme}</Text>
+      </Group>
+    </Paper>
   )
 }
 
