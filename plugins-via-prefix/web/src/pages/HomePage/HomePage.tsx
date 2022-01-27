@@ -1,5 +1,6 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
+import PortalUnitsCell from 'src/components/PortalUnitsCell'
 
 const HomePage = () => {
   return (
@@ -11,13 +12,7 @@ const HomePage = () => {
       </p>
 
       <h1>HomePage</h1>
-      <p>Yada yada</p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, vitae!
-        Expedita non architecto veritatis, corporis quod quisquam modi aperiam
-        aliquid odit suscipit harum dolorum, similique accusamus. Reiciendis
-        temporibus consectetur ullam.
-      </p>
+      <PortalUnitsCell></PortalUnitsCell>
     </>
   )
 }
