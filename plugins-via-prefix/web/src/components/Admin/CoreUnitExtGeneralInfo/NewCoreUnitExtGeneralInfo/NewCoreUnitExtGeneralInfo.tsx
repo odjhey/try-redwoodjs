@@ -1,6 +1,6 @@
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
-import { navigate, routes } from '@redwoodjs/router'
+import { back } from '@redwoodjs/router'
 import CoreUnitExtGeneralInfoForm from 'src/components/Admin/CoreUnitExtGeneralInfo/CoreUnitExtGeneralInfoForm'
 
 const CREATE_CORE_UNIT_EXT_GENERAL_INFO_MUTATION = gql`
@@ -13,13 +13,15 @@ const CREATE_CORE_UNIT_EXT_GENERAL_INFO_MUTATION = gql`
   }
 `
 
-const NewCoreUnitExtGeneralInfo = () => {
+const NewCoreUnitExtGeneralInfo = (props) => {
+  const { coreUnitExtGeneralInfo } = props
+
   const [createCoreUnitExtGeneralInfo, { loading, error }] = useMutation(
     CREATE_CORE_UNIT_EXT_GENERAL_INFO_MUTATION,
     {
       onCompleted: () => {
         toast.success('CoreUnitExtGeneralInfo created')
-        navigate(routes.adminCoreUnitExtGeneralInfos())
+        back()
       },
       onError: (error) => {
         toast.error(error.message)
@@ -44,6 +46,7 @@ const NewCoreUnitExtGeneralInfo = () => {
           onSave={onSave}
           loading={loading}
           error={error}
+          coreUnitExtGeneralInfo={coreUnitExtGeneralInfo}
         />
       </div>
     </div>

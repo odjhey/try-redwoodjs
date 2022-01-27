@@ -11,6 +11,8 @@ export const schema = gql`
   type Query {
     coreUnitExtGeneralInfos: [CoreUnitExtGeneralInfo!]! @requireAuth
     coreUnitExtGeneralInfo(id: Int!): CoreUnitExtGeneralInfo @requireAuth
+    coreUnitExtGeneralInfoByUnitId(unitId: Int!): CoreUnitExtGeneralInfo
+      @requireAuth
   }
 
   input CreateCoreUnitExtGeneralInfoInput {

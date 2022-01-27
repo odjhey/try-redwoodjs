@@ -15,6 +15,14 @@ export const coreUnitExtGeneralInfo = ({
   })
 }
 
+export const coreUnitExtGeneralInfoByUnitId = ({
+  unitId,
+}: Prisma.CoreUnitExtGeneralInfoWhereUniqueInput) => {
+  return db.coreUnitExtGeneralInfo.findUnique({
+    where: { unitId },
+  })
+}
+
 interface CreateCoreUnitExtGeneralInfoArgs {
   input: Prisma.CoreUnitExtGeneralInfoCreateInput
 }

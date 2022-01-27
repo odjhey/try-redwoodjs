@@ -3,7 +3,7 @@ import type { EditCoreUnitExtGeneralInfoById } from 'types/graphql'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
-import { navigate, routes } from '@redwoodjs/router'
+import { back } from '@redwoodjs/router'
 
 import CoreUnitExtGeneralInfoForm from 'src/components/Admin/CoreUnitExtGeneralInfo/CoreUnitExtGeneralInfoForm'
 
@@ -47,7 +47,7 @@ export const Success = ({
     {
       onCompleted: () => {
         toast.success('CoreUnitExtGeneralInfo updated')
-        navigate(routes.adminCoreUnitExtGeneralInfos())
+        back()
       },
       onError: (error) => {
         toast.error(error.message)

@@ -1,6 +1,6 @@
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
-import { Link, routes, navigate } from '@redwoodjs/router'
+import { Link, routes, back } from '@redwoodjs/router'
 
 const DELETE_CORE_UNIT_EXT_GENERAL_INFO_MUTATION = gql`
   mutation DeleteCoreUnitExtGeneralInfoMutation($id: Int!) {
@@ -10,6 +10,7 @@ const DELETE_CORE_UNIT_EXT_GENERAL_INFO_MUTATION = gql`
   }
 `
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const jsonDisplay = (obj) => {
   return (
     <pre>
@@ -26,6 +27,7 @@ const timeTag = (datetime) => {
   )
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const checkboxInputTag = (checked) => {
   return <input type="checkbox" checked={checked} disabled />
 }
@@ -36,7 +38,7 @@ const CoreUnitExtGeneralInfo = ({ coreUnitExtGeneralInfo }) => {
     {
       onCompleted: () => {
         toast.success('CoreUnitExtGeneralInfo deleted')
-        navigate(routes.adminCoreUnitExtGeneralInfos())
+        back() // TODO: can remove this when auto reloading is supported
       },
       onError: (error) => {
         toast.error(error.message)
