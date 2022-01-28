@@ -11,6 +11,8 @@ export const schema = gql`
     developmentId: Int!
     organizationName: String!
     organizationId: Int!
+
+    thumbnailUrl: String
   }
 
   type Query {

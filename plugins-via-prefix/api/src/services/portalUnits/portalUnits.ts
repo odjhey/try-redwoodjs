@@ -10,6 +10,13 @@ export const portalUnits = async () => {
           },
         },
       },
+      attachments: {
+        include: {
+          images: {
+            include: { image: true },
+          },
+        },
+      },
     },
   })
 
@@ -22,6 +29,8 @@ export const portalUnits = async () => {
       developmentId: unit.project.development.id,
       organizationName: unit.project.development.organization.name,
       organizationId: unit.project.development.organization.id,
+      // TODO: fix this images[0], maybe use something like a thumnail field or something
+      thumbnailUrl: unit.attachments.images[0].image.url,
     }
   })
 }

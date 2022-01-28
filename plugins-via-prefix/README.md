@@ -16,6 +16,8 @@
 - [ ] find a good way to assign assets/images to db-resources (im thinking of an upload and tag approach)
 - [ ] start figuring out how to do db searches (index maybe? or a search term field?)
 - [ ] add pagination
+- [ ] use thumbnail/media obj and not straight-up string
+- [ ] add dropdown select for relationship fields
 
 - [ ] (low prio) override styles of scaffold, see `y rw setup generate scaffold`
 - [ ] (low prio) setup husky, lint-staged, trunkio

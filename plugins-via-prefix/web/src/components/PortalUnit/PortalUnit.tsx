@@ -2,7 +2,9 @@ import {
   Badge,
   Button,
   Card,
+  Center,
   Group,
+  Image,
   Text,
   useMantineTheme,
 } from '@mantine/core'
@@ -14,10 +16,26 @@ const PortalUnit = ({ portalUnit }) => {
   const secondaryColor =
     theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.gray[7]
 
+  // see responsive colors
+  const bg =
+    theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[1]
+
   return (
     <div style={{ width: 280 }}>
       <Card shadow="sm" padding="lg">
-        <Card.Section></Card.Section>
+        <Card.Section sx={{ backgroundColor: bg }}>
+          <Center>
+            {portalUnit.thumbnailUrl && (
+              <Image
+                src={portalUnit.thumbnailUrl}
+                height={160}
+                width={'auto'}
+                alt="unit"
+              />
+            )}
+            {/* add default / placeholder image */}
+          </Center>
+        </Card.Section>
 
         <Group
           position="apart"

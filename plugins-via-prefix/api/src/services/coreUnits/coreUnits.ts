@@ -43,4 +43,8 @@ export const deleteCoreUnit = ({ id }: Prisma.CoreUnitWhereUniqueInput) => {
 export const CoreUnit = {
   project: (_obj, { root }: ResolverArgs<ReturnType<typeof coreUnit>>) =>
     db.coreUnit.findUnique({ where: { id: root.id } }).project(),
+  generalInfo: (_obj, { root }: ResolverArgs<ReturnType<typeof coreUnit>>) =>
+    db.coreUnit.findUnique({ where: { id: root.id } }).generalInfo(),
+  attachments: (_obj, { root }: ResolverArgs<ReturnType<typeof coreUnit>>) =>
+    db.coreUnit.findUnique({ where: { id: root.id } }).attachments(),
 }
