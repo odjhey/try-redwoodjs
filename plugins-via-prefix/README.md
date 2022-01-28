@@ -18,7 +18,6 @@
 - [ ] add pagination
 - [ ] use thumbnail/media obj and not straight-up string
 - [ ] add dropdown select for relationship fields
-
 - [ ] (low prio) override styles of scaffold, see `y rw setup generate scaffold`
 - [ ] (low prio) setup husky, lint-staged, trunkio
 - [ ] (low prio) setup sentry
