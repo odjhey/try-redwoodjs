@@ -16,13 +16,11 @@ export const schema = gql`
   }
 
   input CreateCoreUnitInput {
-    cuid: String!
     name: String!
     projectId: Int!
   }
 
   input UpdateCoreUnitInput {
-    cuid: String
     name: String
     projectId: Int
   }
