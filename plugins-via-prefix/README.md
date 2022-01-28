@@ -15,9 +15,11 @@
 - [x] add fileupload (we'll use filestack.com for now) - see if we have to roll our own solution in the future
 - [ ] find a good way to assign assets/images to db-resources (im thinking of an upload and tag approach)
 - [ ] start figuring out how to do db searches (index maybe? or a search term field?)
-- [ ] add pagination
 - [ ] use thumbnail/media obj and not straight-up string
 - [ ] add dropdown select for relationship fields
+- [ ] add filter to pages
+- [ ] add pagination
+- [ ] setup the Connection concept to one of the models (reread the suggested naming convention in the latter part of https://www.apollographql.com/blog/graphql/explaining-graphql-connections/)
 
 - [ ] (low prio) override styles of scaffold, see `y rw setup generate scaffold`
 - [ ] (low prio) setup husky, lint-staged, trunkio

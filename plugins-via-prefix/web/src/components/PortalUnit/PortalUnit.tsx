@@ -25,15 +25,13 @@ const PortalUnit = ({ portalUnit }) => {
       <Card shadow="sm" padding="lg">
         <Card.Section sx={{ backgroundColor: bg }}>
           <Center>
-            {portalUnit.thumbnailUrl && (
-              <Image
-                src={portalUnit.thumbnailUrl}
-                height={160}
-                width={'auto'}
-                alt="unit"
-              />
-            )}
-            {/* add default / placeholder image */}
+            <Image
+              src={portalUnit.thumbnailUrl}
+              height={160}
+              width={portalUnit.thumbnailUrl ? 'auto' : 160}
+              alt="unit"
+              withPlaceholder
+            />
           </Center>
         </Card.Section>
 

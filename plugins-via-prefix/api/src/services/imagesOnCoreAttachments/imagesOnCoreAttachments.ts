@@ -7,6 +7,12 @@ export const imagesOnCoreAttachments = () => {
   return db.imagesOnCoreAttachment.findMany()
 }
 
+export const imagesOnCoreAttachmentsByUnitId = ({ unitId }) => {
+  return db.imagesOnCoreAttachment.findMany({
+    where: { attachment: { unitId } },
+  })
+}
+
 export const imagesOnCoreAttachment = ({
   id,
 }: Prisma.ImagesOnCoreAttachmentWhereUniqueInput) => {

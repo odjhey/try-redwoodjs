@@ -10,6 +10,8 @@ export const schema = gql`
   type Query {
     imagesOnCoreAttachments: [ImagesOnCoreAttachment!]! @requireAuth
     imagesOnCoreAttachment(id: Int!): ImagesOnCoreAttachment @requireAuth
+    imagesOnCoreAttachmentsByUnitId(unitId: Int!): [ImagesOnCoreAttachment!]!
+      @requireAuth
   }
 
   input CreateImagesOnCoreAttachmentInput {
