@@ -6,6 +6,8 @@ export const schema = gql`
     updatedAt: DateTime!
     project: CoreProject!
     projectId: Int!
+    generalInfo: CoreUnitExtGeneralInfo
+    attachments: CoreAttachment
   }
 
   type Query {
@@ -14,11 +16,13 @@ export const schema = gql`
   }
 
   input CreateCoreUnitInput {
+    cuid: String!
     name: String!
     projectId: Int!
   }
 
   input UpdateCoreUnitInput {
+    cuid: String
     name: String
     projectId: Int
   }

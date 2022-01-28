@@ -15,6 +15,8 @@ export const QUERY = gql`
       developmentId
       organizationName
       organizationId
+
+      thumbnailUrl
     }
   }
 `

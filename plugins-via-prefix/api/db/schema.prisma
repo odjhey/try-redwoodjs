@@ -64,7 +64,7 @@ model CoreUnit {
   //      }
   generalInfo CoreUnitExtGeneralInfo?
 
-  attachments CoreAttachment[]
+  attachments CoreAttachment?
 }
 
 model CoreUnitExtGeneralInfo {

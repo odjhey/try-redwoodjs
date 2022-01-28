@@ -8,6 +8,8 @@
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
 import { Set, Router, Route } from '@redwoodjs/router'
+import ImagesOnCoreAttachmentsLayout from 'src/layouts/Admin/ImagesOnCoreAttachmentsLayout'
+import CoreAttachmentsLayout from 'src/layouts/Admin/CoreAttachmentsLayout'
 import ImagesLayout from 'src/layouts/Admin/ImagesLayout'
 import CoreUnitExtGeneralInfosLayout from 'src/layouts/Admin/CoreUnitExtGeneralInfosLayout'
 import CoreUnitsLayout from 'src/layouts/Admin/CoreUnitsLayout'
@@ -62,6 +64,18 @@ const Routes = () => {
           <Route path="/admin/images/{id:Int}/edit" page={AdminImageEditImagePage} name="adminEditImage" />
           <Route path="/admin/images/{id:Int}" page={AdminImageImagePage} name="adminImage" />
           <Route path="/admin/images" page={AdminImageImagesPage} name="adminImages" />
+        </Set>
+        <Set wrap={ImagesOnCoreAttachmentsLayout}>
+          <Route path="/admin/images-on-core-attachments/new" page={AdminImagesOnCoreAttachmentNewImagesOnCoreAttachmentPage} name="adminNewImagesOnCoreAttachment" />
+          <Route path="/admin/images-on-core-attachments/{id:Int}/edit" page={AdminImagesOnCoreAttachmentEditImagesOnCoreAttachmentPage} name="adminEditImagesOnCoreAttachment" />
+          <Route path="/admin/images-on-core-attachments/{id:Int}" page={AdminImagesOnCoreAttachmentImagesOnCoreAttachmentPage} name="adminImagesOnCoreAttachment" />
+          <Route path="/admin/images-on-core-attachments" page={AdminImagesOnCoreAttachmentImagesOnCoreAttachmentsPage} name="adminImagesOnCoreAttachments" />
+        </Set>
+        <Set wrap={CoreAttachmentsLayout}>
+          <Route path="/admin/core-attachments/new" page={AdminCoreAttachmentNewCoreAttachmentPage} name="adminNewCoreAttachment" />
+          <Route path="/admin/core-attachments/{id:Int}/edit" page={AdminCoreAttachmentEditCoreAttachmentPage} name="adminEditCoreAttachment" />
+          <Route path="/admin/core-attachments/{id:Int}" page={AdminCoreAttachmentCoreAttachmentPage} name="adminCoreAttachment" />
+          <Route path="/admin/core-attachments" page={AdminCoreAttachmentCoreAttachmentsPage} name="adminCoreAttachments" />
         </Set>
 
         <Route notfound page={NotFoundPage} />
