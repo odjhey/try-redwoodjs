@@ -21,45 +21,38 @@ const PortalUnit = ({ portalUnit }) => {
     theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[1]
 
   return (
-    <div style={{ width: 280 }}>
-      <Card shadow="sm" padding="lg">
-        <Card.Section sx={{ backgroundColor: bg }}>
-          <Center>
-            <Image
-              src={portalUnit.thumbnailUrl}
-              height={160}
-              width={portalUnit.thumbnailUrl ? 'auto' : 160}
-              alt="unit"
-              withPlaceholder
-            />
-          </Center>
-        </Card.Section>
+    <Card shadow="sm" padding="lg">
+      <Card.Section sx={{ backgroundColor: bg }}>
+        <Center>
+          <Image
+            src={portalUnit.thumbnailUrl}
+            height={160}
+            width={portalUnit.thumbnailUrl ? 'auto' : 160}
+            alt="unit"
+            withPlaceholder
+          />
+        </Center>
+      </Card.Section>
 
-        <Group
-          position="apart"
-          style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
-        >
-          <Text weight={500}>{portalUnit.name}</Text>
+      <Group
+        position="apart"
+        style={{ marginBottom: 5, marginTop: theme.spacing.sm }}
+      >
+        <Text weight={500}>{portalUnit.name}</Text>
 
-          <Badge color="pink" variant="light">
-            {portalUnit.id}
-          </Badge>
-        </Group>
+        <Badge color="pink" variant="light">
+          {portalUnit.id}
+        </Badge>
+      </Group>
 
-        <Text size="sm" style={{ color: secondaryColor, lineHeight: 1.5 }}>
-          {JSON.stringify(portalUnit)}
-        </Text>
+      <Text size="sm" style={{ color: secondaryColor, lineHeight: 1.5 }}>
+        {JSON.stringify(portalUnit)}
+      </Text>
 
-        <Button
-          variant="light"
-          color="blue"
-          fullWidth
-          style={{ marginTop: 14 }}
-        >
-          Open
-        </Button>
-      </Card>
-    </div>
+      <Button variant="light" color="blue" fullWidth style={{ marginTop: 14 }}>
+        Open
+      </Button>
+    </Card>
   )
 }
 

@@ -1,7 +1,7 @@
 import type { PortalUnitsQuery } from 'types/graphql'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 import PortalUnits from '../PortalUnits/PortalUnits'
-import { Pagination } from '@mantine/core'
+import { Container, Pagination, SimpleGrid, Skeleton } from '@mantine/core'
 import { navigate, routes } from '@redwoodjs/router'
 
 export const QUERY = gql`
@@ -34,7 +34,20 @@ export const beforeQuery = ({ limit, start }) => {
   }
 }
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => (
+  <Container sx={{ height: '100vh' }}>
+    <SimpleGrid spacing={'lg'} cols={3}>
+      {[1, 2, 3, 4, 5].map((i) => (
+        <div key={i}>
+          <Skeleton height={50} circle mb="xl" />
+          <Skeleton height={8} radius="xl" />
+          <Skeleton height={8} mt={6} radius="xl" />
+          <Skeleton height={8} mt={6} width="70%" radius="xl" />
+        </div>
+      ))}
+    </SimpleGrid>
+  </Container>
+)
 
 export const Empty = () => <div>Empty</div>
 
@@ -50,14 +63,15 @@ export const Success = ({
   const page = Math.floor(start / limit) + 1
   return (
     <>
-      <PortalUnits portalUnits={portalUnitsList.data} />
       <Pagination
         total={Math.ceil(portalUnitsList.count / limit)}
         page={page}
         onChange={(page) => {
           navigate(routes.home({ start: (page - 1) * limit, limit }))
         }}
+        sx={{ marginBottom: '1rem' }}
       ></Pagination>
+      <PortalUnits portalUnits={portalUnitsList.data} />
     </>
   )
 }

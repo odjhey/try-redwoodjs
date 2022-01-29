@@ -17,6 +17,7 @@ import CoreProjectsLayout from 'src/layouts/Admin/CoreProjectsLayout'
 import CoreDevelopmentsLayout from 'src/layouts/Admin/CoreDevelopmentsLayout'
 import CoreOrganizationsLayout from 'src/layouts/Admin/CoreOrganizationsLayout'
 import AdminLayout from 'src/layouts/AdminLayout/AdminLayout'
+import HomeLayout from 'src/layouts/HomeLayout/HomeLayout'
 
 const Routes = () => {
   return (
@@ -25,7 +26,9 @@ const Routes = () => {
       <Route path="/signup" page={SignupPage} name="signup" />
       <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
       <Route path="/reset-password" page={ResetPasswordPage} name="resetPassword" />
-      <Route path="/" page={HomePage} name="home" />
+      <Set wrap={HomeLayout}>
+        <Route path="/" page={HomePage} name="home" />
+      </Set>
       <Set wrap={AdminLayout}>
         <Route path="/admin" page={AdminPage} name="admin" />
         <Set wrap={CoreUnitsLayout}>
