@@ -20,6 +20,7 @@
 - [ ] add filter to pages
 - [ ] add pagination
 - [ ] setup the Connection concept to one of the models (reread the suggested naming convention in the latter part of https://www.apollographql.com/blog/graphql/explaining-graphql-connections/)
+- [ ] do we have so much data we need "connections"? how about page numbering?
 - [ ] (low prio) override styles of scaffold, see `y rw setup generate scaffold`
 - [ ] (low prio) setup husky, lint-staged, trunkio
 - [ ] (low prio) setup sentry
@@ -27,6 +28,10 @@
 ## Plugin Centric Dev
 
 features are either a plugin, or part of core.
+
+## type of item collection
+
+they should either be a List (paged by offset x limit) or a Connection (paged by cursor)
 
 ## Getting Started
 
