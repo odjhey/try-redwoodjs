@@ -18,12 +18,19 @@
 - [ ] use thumbnail/media obj and not straight-up string
 - [ ] add dropdown select for relationship fields
 - [ ] add filter to pages
-- [ ] add pagination
+- [ ] add pagination (connection)
+- [x] add pagination (limit x offset)
 - [ ] setup the Connection concept to one of the models (reread the suggested naming convention in the latter part of https://www.apollographql.com/blog/graphql/explaining-graphql-connections/)
 - [ ] do we have so much data we need "connections"? how about page numbering?
+- [ ] decide how and when to use mantine's layouts (center, container, grid, etc)
+- [ ] document how to use the errors https://redwoodjs.com/docs/graphql.html#redwood-errors
 - [ ] (low prio) override styles of scaffold, see `y rw setup generate scaffold`
 - [ ] (low prio) setup husky, lint-staged, trunkio
 - [ ] (low prio) setup sentry
+- [ ] figure how to do local user state (i.e. preferences)
+- [ ] discuss Cell events/exports/lifecycle-hooks https://redwoodjs.com/docs/cells#usage
+- [ ] use the `input PageOffsetInput` pattern and use a standard `queryStuff(input: PageOffsetInput): Some[]` param
+
 
 ## Plugin Centric Dev
 

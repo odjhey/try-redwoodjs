@@ -15,7 +15,13 @@ export const schema = gql`
     thumbnailUrl: String
   }
 
+  type PortalUnitsPayload {
+    data: [PortalUnit!]!
+    count: Int!
+  }
+
   type Query {
     portalUnits: [PortalUnit!]! @skipAuth
+    portalUnitsList(limit: Int, start: Int): PortalUnitsPayload! @skipAuth
   }
 `
