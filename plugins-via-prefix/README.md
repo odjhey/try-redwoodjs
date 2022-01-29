@@ -20,7 +20,6 @@
 - [ ] add filter to pages
 - [ ] add pagination
 - [ ] setup the Connection concept to one of the models (reread the suggested naming convention in the latter part of https://www.apollographql.com/blog/graphql/explaining-graphql-connections/)
-
 - [ ] (low prio) override styles of scaffold, see `y rw setup generate scaffold`
 - [ ] (low prio) setup husky, lint-staged, trunkio
 - [ ] (low prio) setup sentry
