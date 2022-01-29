@@ -5,7 +5,7 @@ import PortalUnitsCell from 'src/components/PortalUnitsCell'
 import { useThemeSwitcher } from 'src/hooks/useThemeSwitcher'
 import { SunIcon, MoonIcon } from '@modulz/radix-icons'
 
-const HomePage = () => {
+const HomePage = ({ limit = 5, start = 0 }) => {
   return (
     <>
       <MetaTags title="Home" description="Home page" />
@@ -14,7 +14,8 @@ const HomePage = () => {
       </p>
       <ThemeSwitch />
       <h1>HomePage</h1>
-      <PortalUnitsCell></PortalUnitsCell>
+
+      <PortalUnitsCell limit={limit} start={start}></PortalUnitsCell>
     </>
   )
 }
