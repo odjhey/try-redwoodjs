@@ -30,7 +30,7 @@ export const portalUnits = async () => {
       organizationName: unit.project.development.organization.name,
       organizationId: unit.project.development.organization.id,
       // TODO: fix this images[0], maybe use something like a thumnail field or something
-      thumbnailUrl: unit.attachments.images[0].image.url,
+      thumbnailUrl: unit.attachments?.images[0]?.image.url,
     }
   })
 }
