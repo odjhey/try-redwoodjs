@@ -9,7 +9,8 @@
     ]
   },
   "scripts": {
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "rw:admin": "WEB_PATH=./admin yarn rw"
   },
   "devDependencies": {
     "@redwoodjs/core": "0.42.1",
