@@ -1,0 +1,21 @@
+diff --git a/node_modules/@redwoodjs/core/config/webpack.common.js b/node_modules/@redwoodjs/core/config/webpack.common.js
+index 65350f3..c5a7e0a 100644
+--- a/node_modules/@redwoodjs/core/config/webpack.common.js
++++ b/node_modules/@redwoodjs/core/config/webpack.common.js
+@@ -172,6 +172,7 @@ const getSharedPlugins = (isEnvProduction) => {
+     new Dotenv({
+       path: path.resolve(redwoodPaths.base, '.env'),
+       silent: true,
++      ignoreStub: true, // FIXME: this might not be necessary once the storybook webpack 4/5 stuff is ironed out. See also: https://github.com/mrsteele/dotenv-webpack#processenv-stubbing--replacing
+     }),
+   ].filter(Boolean)
+ }
+@@ -228,7 +229,7 @@ module.exports = (webpackEnv) => {
+     plugins: [
+       !isEnvProduction && new webpack.HotModuleReplacementPlugin(),
+       new HtmlWebpackPlugin({
+-        template: path.resolve(redwoodPaths.base, 'web/src/index.html'),
++        template: path.resolve(redwoodPaths.web.base, 'src/index.html'),
+         templateParameters: {
+           prerenderPlaceholder: isEnvProduction
+             ? '<server-markup></server-markup>'

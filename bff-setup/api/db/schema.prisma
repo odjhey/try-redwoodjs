@@ -26,7 +26,7 @@ model CoreOrganization {
   updatedAt DateTime @updatedAt
   deletedAt DateTime?
 
-  developments CoreDevelopment[]
+  // developments CoreDevelopment[]
 }
 
 model CoreDevelopment {
@@ -35,8 +35,8 @@ model CoreDevelopment {
   name  String
   updatedAt DateTime @updatedAt
   deletedAt DateTime?
-  organization CoreOrganization @relation(fields: [organizationId], references: [id])
-  organizationId Int
+  // organization CoreOrganization @relation(fields: [organizationId], references: [id])
+  // organizationId Int
 
   projects CoreProject[]
 }

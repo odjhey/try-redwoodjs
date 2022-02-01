@@ -1,5 +1,18 @@
+diff --git a/node_modules/@redwoodjs/internal/dist/generate/typeDefinitions.js b/node_modules/@redwoodjs/internal/dist/generate/typeDefinitions.js
+index 581f1ad..e9e6b54 100644
+--- a/node_modules/@redwoodjs/internal/dist/generate/typeDefinitions.js
++++ b/node_modules/@redwoodjs/internal/dist/generate/typeDefinitions.js
+@@ -258,7 +258,7 @@ const generateTypeDefGraphQLWeb = async () => {
+   try {
+     const f = await runCodegenGraphQL({
+       [_path.default.join(rwjsPaths.web.types, 'graphql.d.ts')]: {
+-        documents: './web/src/**/!(*.d).{ts,tsx,js,jsx}',
++        documents: _path.default.join(rwjsPaths.web.base, 'src/**/!(*.d).{ts,tsx,js,jsx}'),
+         plugins: [{
+           typescript: {
+             enumsAsTypes: true
 diff --git a/node_modules/@redwoodjs/internal/dist/paths.js b/node_modules/@redwoodjs/internal/dist/paths.js
-index f2220c7..2613b40 100644
+index f2220c7..70024d9 100644
 --- a/node_modules/@redwoodjs/internal/dist/paths.js
 +++ b/node_modules/@redwoodjs/internal/dist/paths.js
 @@ -38,23 +38,23 @@ const PATH_API_DIR_GENERATORS = 'api/generators';
@@ -23,23 +36,23 @@ index f2220c7..2613b40 100644
 -const PATH_WEB_DIR_CONFIG_STORYBOOK_PREVIEW = 'web/config/storybook.preview.js';
 -const PATH_WEB_DIR_CONFIG_STORYBOOK_MANAGER = 'web/config/storybook.manager.js';
 -const PATH_WEB_DIR_DIST = 'web/dist';
-+const PATH_WEB_ROUTES = '/src/Routes'; // .js|.tsx
++const PATH_WEB_ROUTES = 'src/Routes'; // .js|.tsx
 +
-+const PATH_WEB_DIR_LAYOUTS = '/src/layouts/';
-+const PATH_WEB_DIR_PAGES = '/src/pages/';
-+const PATH_WEB_DIR_COMPONENTS = '/src/components';
-+const PATH_WEB_DIR_SRC = '/src';
-+const PATH_WEB_DIR_SRC_APP = '/src/App';
-+const PATH_WEB_DIR_SRC_INDEX = '/src/index'; // .js|.tsx
++const PATH_WEB_DIR_LAYOUTS = 'src/layouts/';
++const PATH_WEB_DIR_PAGES = 'src/pages/';
++const PATH_WEB_DIR_COMPONENTS = 'src/components';
++const PATH_WEB_DIR_SRC = 'src';
++const PATH_WEB_DIR_SRC_APP = 'src/App';
++const PATH_WEB_DIR_SRC_INDEX = 'src/index'; // .js|.tsx
 +
-+const PATH_WEB_DIR_GENERATORS = '/generators';
-+const PATH_WEB_DIR_CONFIG = '/config';
-+const PATH_WEB_DIR_CONFIG_WEBPACK = '/config/webpack.config.js';
-+const PATH_WEB_DIR_CONFIG_POSTCSS = '/config/postcss.config.js';
-+const PATH_WEB_DIR_CONFIG_STORYBOOK_CONFIG = '/config/storybook.config.js';
-+const PATH_WEB_DIR_CONFIG_STORYBOOK_PREVIEW = '/config/storybook.preview.js';
-+const PATH_WEB_DIR_CONFIG_STORYBOOK_MANAGER = '/config/storybook.manager.js';
-+const PATH_WEB_DIR_DIST = '/dist';
++const PATH_WEB_DIR_GENERATORS = 'generators';
++const PATH_WEB_DIR_CONFIG = 'config';
++const PATH_WEB_DIR_CONFIG_WEBPACK = 'config/webpack.config.js';
++const PATH_WEB_DIR_CONFIG_POSTCSS = 'config/postcss.config.js';
++const PATH_WEB_DIR_CONFIG_STORYBOOK_CONFIG = 'config/storybook.config.js';
++const PATH_WEB_DIR_CONFIG_STORYBOOK_PREVIEW = 'config/storybook.preview.js';
++const PATH_WEB_DIR_CONFIG_STORYBOOK_MANAGER = 'config/storybook.manager.js';
++const PATH_WEB_DIR_DIST = 'dist';
  /**
   * Search the parent directories for the Redwood configuration file.
   */
