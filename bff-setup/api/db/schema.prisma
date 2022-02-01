@@ -8,11 +8,110 @@ generator client {
   binaryTargets = "native"
 }
 
-// Define your own datamodels here and run `yarn redwood prisma migrate dev`
-// to create migrations for them and apply to your dev DB.
-// TODO: Please remove the following example:
-model UserExample {
+model User {
+  id                  Int @id @default(autoincrement())
+  email               String @unique
+  hashedPassword      String
+  salt                String
+  resetToken          String?
+  resetTokenExpiresAt DateTime?
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
+}
+
+model CoreOrganization {
   id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  cuid  String  @unique @default(cuid())
+  name  String
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
+
+  developments CoreDevelopment[]
+}
+
+model CoreDevelopment {
+  id    Int     @id @default(autoincrement())
+  cuid  String  @unique @default(cuid())
+  name  String
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
+  organization CoreOrganization @relation(fields: [organizationId], references: [id])
+  organizationId Int
+
+  projects CoreProject[]
+}
+
+model CoreProject {
+  id    Int     @id @default(autoincrement())
+  cuid  String  @unique @default(cuid())
+  name  String
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
+  development CoreDevelopment @relation(fields: [developmentId], references: [id])
+  developmentId Int
+
+  units CoreUnit[]
+}
+
+model CoreUnit {
+  id    Int     @id @default(autoincrement())
+  cuid  String  @unique @default(cuid())
+  name  String
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
+  project CoreProject @relation(fields: [projectId], references: [id])
+  projectId Int
+
+  // what are the benefits of moving this to own model?
+  // i.e. model CoreUnitViews {
+  //        unit
+  //        generalInfo CoreUnitExtGeneralInfo?
+  //        attachments
+  //      }
+  generalInfo CoreUnitExtGeneralInfo?
+
+  attachments CoreAttachment?
+}
+
+model CoreUnitExtGeneralInfo {
+  id    Int     @id @default(autoincrement())
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
+  unit CoreUnit @relation(fields: [unitId], references: [id])
+  unitId Int
+  model String
+  description String
+}
+
+model Image {
+  id    Int    @id @default(autoincrement())
+  title String
+  url   String
+
+  attachments ImagesOnCoreAttachment[]
+}
+
+model CoreAttachment {
+  id    Int     @id @default(autoincrement())
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
+  targetModel String
+
+  images ImagesOnCoreAttachment[]
+
+  unit CoreUnit @relation(fields: [unitId], references: [id])
+  unitId Int
+
+  // add more possible targets here
+}
+
+model ImagesOnCoreAttachment {
+  id    Int    @id @default(autoincrement())
+  attachmentId Int
+  attachment CoreAttachment @relation(fields: [attachmentId], references: [id])
+  imageId Int
+  image Image @relation(fields: [imageId], references: [id])
+
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
 }
