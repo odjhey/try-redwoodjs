@@ -6,6 +6,8 @@ export const schema = gql`
     updatedAt: DateTime!
     project: CoreProject!
     projectId: Int!
+    generalInfo: CoreUnitExtGeneralInfo
+    attachments: CoreAttachment
   }
 
   type Query {
