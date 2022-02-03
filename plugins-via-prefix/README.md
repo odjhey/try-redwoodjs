@@ -30,6 +30,8 @@
 - [ ] figure how to do local user state (i.e. preferences)
 - [ ] discuss Cell events/exports/lifecycle-hooks https://redwoodjs.com/docs/cells#usage
 - [ ] use the `input PageOffsetInput` pattern and use a standard `queryStuff(input: PageOffsetInput): Some[]` param
+- [ ] use CUID as graphql ID for ease of caching (read more about global unique ids)
+- [ ] separate plural roots, which accept a single args of arrays, from roots ending in `list` to denote pagination possibilities https://graphql.org/learn/global-object-identification/#fields
 
 
 ## Plugin Centric Dev
