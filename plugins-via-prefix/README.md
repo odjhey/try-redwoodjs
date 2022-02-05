@@ -14,7 +14,7 @@
 - [ ] add deletedAt flag to models
 - [x] add fileupload (we'll use filestack.com for now) - see if we have to roll our own solution in the future
 - [ ] find a good way to assign assets/images to db-resources (im thinking of an upload and tag approach)
-- [ ] start figuring out how to do db searches (index maybe? or a search term field?)
+- [ ] start figuring out how to do db searches (index maybe? or a search term field?) - go elasticsearch/sonic
 - [ ] use thumbnail/media obj and not straight-up string
 - [ ] add dropdown select for relationship fields
 - [ ] add filter to pages
