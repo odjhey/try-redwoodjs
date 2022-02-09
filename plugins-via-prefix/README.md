@@ -34,6 +34,7 @@
 - [ ] separate plural roots, which accept a single args of arrays, from roots ending in `list` to denote pagination possibilities https://graphql.org/learn/global-object-identification/#fields
 - [ ] separate set of gqls for admin and ui
 - [ ] try commons workspace packages
+- [ ] `yarn add tiny-invariant`
 
 
 ## Plugin Centric Dev
