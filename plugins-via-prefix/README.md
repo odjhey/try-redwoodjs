@@ -10,7 +10,7 @@
 - [ ] secure some routes depends on the authorization
 - [ ] create a dev guide/wf, [something like this](https://github.com/echobind/bisonapp/blob/canary/docs/devWorkflow.md)
 - [x] add ~~portal~~ home/non-admin view
-- [ ] rename PortalUnits to PortalUnitList and PortalUnitListItem accordingly
+- [ ] rename PortalUnits(ids: []) to PortalUnitList and PortalUnitListItem accordingly
 - [ ] add deletedAt flag to models
 - [x] add fileupload (we'll use filestack.com for now) - see if we have to roll our own solution in the future
 - [ ] find a good way to assign assets/images to db-resources (im thinking of an upload and tag approach)
